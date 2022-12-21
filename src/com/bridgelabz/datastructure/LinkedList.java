@@ -18,7 +18,7 @@ package com.bridgelabz.datastructure;
             head = newNode;
         }
         }
-        public void displayLinkedlist() {
+        public void display() {
             Node<T> temp = head;
             while (temp != null) {
                 System.out.print(temp.key + " -> ");
