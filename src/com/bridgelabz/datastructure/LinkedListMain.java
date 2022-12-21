@@ -10,8 +10,7 @@ public class LinkedListMain {
             linkedList1.push(70);
             linkedList1.push(30);
             linkedList1.push(56);
-
-            System.out.println(linkedList1);
+            linkedList1.displayLinkedlist();
         }
     }
 
