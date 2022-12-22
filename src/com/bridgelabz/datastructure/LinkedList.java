@@ -1,32 +1,26 @@
-
 package com.bridgelabz.datastructure;
-public class LinkedList<T> {
 
+public class LinkedList<T> {
     Node<T> head;
     Node<T> tail;
 
     public void push(T key) {
-        Node<T> newNode = new Node(key);
-        if(head==null){
+        Node<T> newNode = new Node<>(key);
+        if (head == null) {
             head = newNode;
             tail = newNode;
-        }
-        else
-        {
+        } else {
             newNode.next = head;
             head = newNode;
         }
     }
-    public void displaylinkedlist()
-    {
+
+    public void displaylinkedlist() {
         Node<T> temp = head;
-        while (temp != null)
-        {
-            if (temp.next == null)
-            {
+        while (temp != null) {
+            if (temp.next == null) {
                 System.out.print(temp.key);
-            } else
-            {
+            } else {
                 System.out.print(temp.key + " -> ");
             }
             temp = temp.next;
@@ -34,55 +28,41 @@ public class LinkedList<T> {
         System.out.println();
     }
 
-    public void insert(T key,int position)
-    {
+    public void insert(T key, int position) {
         //Create a new node
         Node<T> newNode = new Node(key);
-        if(head == null)
-        {
-            //If list is empty, both head and tail would point to new node
+        if (head == null) {
             head = newNode;
             tail = newNode;
-        }
-        else
-        {
+        } else {
             Node temp, current;
             temp = head;
             current = null;
-            for(int i = 0; i < position; i++)
-            {
-                //Node current will point to temp
+            for (int i = 0; i < position; i++) {
                 current = temp;
-                //Node temp will point to node next to it.
                 temp = temp.next;
             }
-            //current will point to new node
             current.next = newNode;
-            //new node will point to temp
             newNode.next = temp;
         }
 
     }
 
-  public  void pop()     //delete first element from linked list
-   {
-   if(head==null) {
-       System.out.println("list is empty");
-   }else
-   {
-       if(head!=tail)
-       {
-           head = head.next;
-       }
-       else
-       {
-           head=tail=null;
-               }
-           }
-       }
+    public void  pop() {
+        if (head == null) {
+            System.out.println("List is empty");
 
-    public void  popLast()
-    {                             //deleting last element from linkedlist.
+        } else {
+
+            if (head != tail) {
+                head = head.next;
+            }
+            else {
+                head = tail = null;
+            }
+        }
+    }
+    public void  popLast(){
         if(head == null) {
             System.out.println("List is empty");
             return;
@@ -101,8 +81,28 @@ public class LinkedList<T> {
             }
         }
     }
+    public Node<T> searchNode(T key) {
+        Node current = head;
+        int i = 1;
+        boolean flag = false;
+        if(head == null) {
+            System.out.println("List is empty");
+        }
+        else {
+            while(current != null) {
+                if(current.key == key) {
+                    flag = true;
+                    break;
+                }
+                i++;
+                current = current.next;
+            }
+        }
+        if(flag)
+            System.out.println("Search Element is present in the Linked list at the position : " + i);
+        else
+            System.out.println("Search Element is not present in the Linked list");
+        return null;
+    }
 
 }
-
-
-
