@@ -81,9 +81,9 @@ public class LinkedList<T> {
             }
         }
     }
-    public Node<T> searchNode(T key) {
+    public int searchNode(T key) {
         Node current = head;
-        int i = 1;
+        int i = 0;
         boolean flag = false;
         if(head == null) {
             System.out.println("List is empty");
@@ -98,11 +98,7 @@ public class LinkedList<T> {
                 current = current.next;
             }
         }
-        if(flag)
-            System.out.println("Search Element is present in the Linked list at the position : " + i);
-        else
-            System.out.println("Search Element is not present in the Linked list");
-        return null;
+        return (i);
     }
 
 }
