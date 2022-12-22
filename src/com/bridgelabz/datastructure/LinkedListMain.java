@@ -13,6 +13,8 @@ public class LinkedListMain {
 
             linkedList1.insert(30,1);
             linkedList1.display();
+            linkedList1.pop();
+            linkedList1.display();
 
         }
     }

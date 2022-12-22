@@ -1,6 +1,5 @@
 
 package com.bridgelabz.datastructure;
-
 public class LinkedList<T> {
 
     Node<T> head;
@@ -35,19 +34,23 @@ public class LinkedList<T> {
         System.out.println();
     }
 
-    public void insert(T key,int position){
+    public void insert(T key,int position)
+    {
         //Create a new node
         Node<T> newNode = new Node(key);
-        if(head == null) {
+        if(head == null)
+        {
             //If list is empty, both head and tail would point to new node
             head = newNode;
             tail = newNode;
         }
-        else {
+        else
+        {
             Node temp, current;
             temp = head;
             current = null;
-            for(int i = 0; i < position; i++) {
+            for(int i = 0; i < position; i++)
+            {
                 //Node current will point to temp
                 current = temp;
                 //Node temp will point to node next to it.
@@ -60,6 +63,23 @@ public class LinkedList<T> {
         }
 
     }
-}
+
+   public  void pop(){
+   if(head==null) {
+       System.out.println("list is empty");
+   }else
+   {
+       if(head!=tail)
+       {
+           head = head.next;
+       }
+       else
+       {
+           head=tail=null;
+               }
+           }
+       }
+   }
+
 
 
