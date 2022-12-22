@@ -81,24 +81,33 @@ public class LinkedList<T> {
             }
         }
     }
-    public int searchNode(T key) {
+    public int linkedListSize() {
         Node current = head;
         int i = 0;
-        boolean flag = false;
         if(head == null) {
             System.out.println("List is empty");
         }
         else {
             while(current != null) {
-                if(current.key == key) {
-                    flag = true;
-                    break;
-                }
-                i++;
                 current = current.next;
+                i++;
             }
         }
         return (i);
+    }
+    public void searchAndDelete(T search){      // search and insert  UC4
+        Node current = head;
+        Node prev = current;
+        while(current!=null){
+            if(current.key == search) {
+                prev.next = current.next;
+                current.next = null;
+                return;
+            }
+            prev = current;
+            current=current.next;
+        }
+        System.out.println("Search Element is not found");
     }
 
 }
