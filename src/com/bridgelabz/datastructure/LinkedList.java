@@ -17,7 +17,7 @@ public class LinkedList<T> {
             head = newNode;
         }
     }
-    public void display()
+    public void displaylinkedlist()
     {
         Node<T> temp = head;
         while (temp != null)
@@ -64,7 +64,8 @@ public class LinkedList<T> {
 
     }
 
-   public  void pop(){
+  public  void pop()     //delete first element from linked list
+   {
    if(head==null) {
        System.out.println("list is empty");
    }else
@@ -79,7 +80,29 @@ public class LinkedList<T> {
                }
            }
        }
-   }
+
+    public void  popLast()
+    {                             //deleting last element from linkedlist.
+        if(head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        else {
+            if(head != tail ) {
+                Node current = head;
+                while(current.next != tail) {
+                    current = current.next;
+                }
+                tail = current;
+                tail.next = null;
+            }
+            else {
+                head = tail = null;
+            }
+        }
+    }
+
+}
 
 
 
